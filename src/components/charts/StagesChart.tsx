@@ -19,17 +19,17 @@ export const StagesChart: React.FC<StagesChartProps> = ({
   xAxisTitle = 'Stage',
 }) => {
   return (
-    <div className="w-full h-full flex flex-col justify-between pt-2">
-      <div className="w-full h-[320px]">
+    <div className="w-full h-full flex flex-col justify-between pt-1 select-none">
+      <div className="w-full h-[330px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
-            margin={{ top: 15, right: 20, left: 10, bottom: 40 }}
-            barSize={40}
+            margin={{ top: 20, right: 30, left: 15, bottom: 45 }}
+            barSize={44}
           >
             <CartesianGrid
               vertical={false}
-              stroke="#D1D5DB"
+              stroke="#D8DCE0"
               strokeDasharray=""
               strokeWidth={1}
             />
@@ -43,7 +43,7 @@ export const StagesChart: React.FC<StagesChartProps> = ({
                 value: 'Record Count',
                 angle: -90,
                 position: 'insideLeft',
-                offset: 2,
+                offset: 5,
                 style: {
                   fill: '#2C2C2C',
                   fontSize: '14px',
@@ -59,7 +59,7 @@ export const StagesChart: React.FC<StagesChartProps> = ({
               angle={-45}
               textAnchor="end"
               interval={0}
-              height={50}
+              height={55}
               tick={{ fill: '#777777', fontSize: 11 }}
             />
             {/* Stacked Bars from bottom to top */}

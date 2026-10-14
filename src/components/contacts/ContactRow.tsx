@@ -8,34 +8,34 @@ interface ContactRowProps {
 
 export const ContactRow: React.FC<ContactRowProps> = ({ contact }) => {
   return (
-    <div className="flex items-center min-h-[110px] xl:min-h-row-h px-8 border-b border-divider/70 hover:bg-white/40 transition-colors">
+    <div className="flex items-center min-h-[137px] px-8 border-b border-divider/80 hover:bg-white/40 transition-colors">
       {/* 1. Contact Name & Email */}
       <div className="w-[26%] pr-4 flex flex-col justify-center">
-        <span className="text-row-title text-black font-bold tracking-tight">
+        <span className="text-[23px] text-text-primary font-bold tracking-tight">
           {contact.name}
         </span>
-        <span className="text-row-subtitle text-text-secondary mt-1">
+        <span className="text-[16px] text-text-secondary mt-1 font-normal">
           Email: {contact.email}
         </span>
       </div>
 
       {/* 2. Company */}
-      <div className="w-[16%] pr-4 text-row-cell text-text-primary">
+      <div className="w-[16%] pr-4 text-[20px] text-text-primary font-normal">
         {contact.company}
       </div>
 
       {/* 3. Role */}
-      <div className="w-[14%] pr-4 text-row-cell text-text-primary">
+      <div className="w-[14%] pr-4 text-[20px] text-text-primary font-normal">
         {contact.role}
       </div>
 
       {/* 4. Phone No. */}
-      <div className="w-[17%] pr-4 text-row-cell text-text-primary">
+      <div className="w-[17%] pr-4 text-[20px] text-text-primary font-normal">
         {contact.phone}
       </div>
 
       {/* 5. Deal Stage */}
-      <div className="w-[14%] pr-4 text-row-cell text-text-primary">
+      <div className="w-[14%] pr-4 text-[20px] text-text-primary font-normal">
         {contact.dealStage}
       </div>
 

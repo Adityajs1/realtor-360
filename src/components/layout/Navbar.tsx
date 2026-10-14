@@ -27,14 +27,14 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white shadow-navbar h-nav-h flex items-center px-content-px border-b border-divider/40">
-      <div className="w-full flex items-center justify-between">
+      <div className="w-full flex items-center gap-7 2xl:gap-10">
         {/* Left: Realtor360 Logo */}
-        <Link to="/" className="flex items-center transition-opacity hover:opacity-90">
+        <Link to="/" className="flex items-center transition-opacity hover:opacity-90 flex-shrink-0 mr-2">
           <RealtorLogo />
         </Link>
 
-        {/* Center / Right: Nav links */}
-        <nav className="flex items-center gap-1 xl:gap-2">
+        {/* Nav links right next to logo with consistent gap */}
+        <nav className="flex items-center gap-2 xl:gap-3 2xl:gap-5 flex-wrap">
           {NAV_ITEMS.map((item) => {
             const isActive =
               item.path === '/'
@@ -46,10 +46,10 @@ export const Navbar: React.FC = () => {
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  'flex items-center justify-center font-medium transition-all duration-150',
+                  'flex items-center justify-center font-medium transition-all duration-150 select-none text-[18px]',
                   isActive
-                    ? 'bg-gold text-white rounded-active-tab h-active-tab-h px-6 text-nav-item shadow-sm'
-                    : 'text-text-primary hover:text-gold px-3.5 py-2.5 text-nav-item rounded-lg'
+                    ? 'bg-gold !text-white rounded-active-tab h-active-tab-h px-6 min-w-[95px] shadow-sm'
+                    : 'text-text-primary hover:text-gold px-3.5 py-2.5 rounded-lg'
                 )}
               >
                 {item.name}
