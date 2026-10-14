@@ -36,20 +36,35 @@ export const Navbar: React.FC = () => {
         {/* Nav links right next to logo with consistent gap */}
         <nav className="flex items-center gap-2 xl:gap-3 2xl:gap-5 flex-wrap">
           {NAV_ITEMS.map((item) => {
+            const isHome = item.path === '/'
             const isActive =
-              item.path === '/'
+              isHome
                 ? location.pathname === '/'
                 : location.pathname.startsWith(item.path)
 
+            if (isHome) {
+              // Home always retains the yellow background rounded rectangle pill
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="flex items-center justify-center font-medium transition-all duration-150 select-none text-[18px] bg-gold !text-white rounded-active-tab h-active-tab-h px-6 min-w-[95px] shadow-sm hover:bg-gold-hover"
+                >
+                  {item.name}
+                </Link>
+              )
+            }
+
+            // Tabs after Home: no yellow background, just affect the text
             return (
               <Link
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  'flex items-center justify-center font-medium transition-all duration-150 select-none text-[18px]',
+                  'flex items-center justify-center transition-all duration-150 select-none text-[18px] px-3.5 py-2.5 rounded-lg',
                   isActive
-                    ? 'bg-gold !text-white rounded-active-tab h-active-tab-h px-6 min-w-[95px] shadow-sm'
-                    : 'text-text-primary hover:text-gold px-3.5 py-2.5 rounded-lg'
+                    ? 'text-gold font-semibold'
+                    : 'text-text-primary hover:text-gold font-medium'
                 )}
               >
                 {item.name}
